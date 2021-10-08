@@ -1,5 +1,5 @@
 //************** DIGITAL ROOT **************//
-function digital_root(n) {
+const digital_root = (n) => {
   let input = n;
   let arr = [];
   const reducer = (a, b) => a + b;
@@ -14,7 +14,7 @@ let number = 666;
 console.log(`The digital root of ${number} is ${digital_root(number)}`);
 
 //************** DUPLICATE ENCODER **************//
-function duplicateEncode(word) {
+const duplicateEncode = (word) => {
   let wordArr = word.toLowerCase().split("");
   let encodedString = "";
 
@@ -33,7 +33,7 @@ let input = "success";
 console.log(`\"${input}\" after encoding is \"${duplicateEncode(input)}\"`);
 
 //************** MORSE DECODER **************//
-decodeMorse = function (morseCode) {
+const decodeMorse = (morseCode) => {
   var MORSE_CODE = {
     ".-": "A", "-...": "B", "-.-.": "C", "-..": "D",
     ".": "E", "..-.": "F", "--.": "G", "....": "H",
@@ -65,7 +65,7 @@ decodeMorse = function (morseCode) {
 console.log(decodeMorse('.... . -.--   .--- ..- -.. .'));
 
 //************** EQUAL SIDES OF AN ARRAY **************//
-function findEvenIndex(arr) {
+const findEvenIndex = (arr) => {
   let inputValues = arr;
 
   for (let i = 1; i < inputValues.length; i++) {
@@ -94,7 +94,7 @@ const isPrime = (num) => {
 console.log(isPrime(10));
 
 //************** IS THE NUMBER NARCISSISTIC? **************//
-function isNarcissistic(value) {
+const isNarcissistic = (value) => {
   let pwrOf = value.toString().length;
   let numArr = Array.from(String(value), Number);
   let pwrNumArr = [];
@@ -110,7 +110,7 @@ function isNarcissistic(value) {
 console.log(isNarcissistic(7));
 
 //************** IS THIS A TRIANGLE? **************//
-function isTriangle(a, b, c) {
+const isTriangle = (a, b, c) => {
   if (a + b > c && a + c > b && b + c > a) {
     return true;
   } else {
@@ -119,3 +119,20 @@ function isTriangle(a, b, c) {
 }
 console.log(isTriangle(2, 2, 5));
 console.log(isTriangle(10, 1, 6));
+
+//************** IQ TEST **************//
+const iqTest = (numbers) => {
+  let numArr = Array.from(numbers.split(' '), Number);
+  let evenNumArr = [];
+  let oddNumArr = [];
+
+  for (let i = 0; i <= numArr.length; i++) {
+    if (numArr[i] % 2 === 0) {
+      evenNumArr.push(numArr[i]);
+    } else {
+      oddNumArr.push(numArr[i]);
+    }
+  }
+  return (evenNumArr.length < 2) ? numArr.indexOf(evenNumArr[0]) + 1 : numArr.indexOf(oddNumArr[0]) + 1;
+}
+console.log(iqTest("2 4 7 8 10"));
