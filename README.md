@@ -9,6 +9,7 @@
  * Is the number a prime?
  * Is the number narcissistic?
  * Is this a triangle?
+ * IQ test
 
 ## Ruby
 * Two sum
